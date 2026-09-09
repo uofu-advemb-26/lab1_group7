@@ -3,3 +3,7 @@ CPP=/usr/bin/arm-none-eabi-cpp # Using global install instead of version from pi
 
 main.i: main.c
 	$(CPP) main.c > main.i
+
+.PHONY: clean
+clean:
+	rm -f main.i hello.txt
