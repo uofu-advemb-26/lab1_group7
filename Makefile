@@ -15,11 +15,11 @@ firmware.elf: $(OBJS)
 %.o: %.s
 	$(AS) $< -o $@
 
-main.s: main.i
-	$(CC) -S main.i
+%.s: %.i
+	$(CC) -S $<
 
-main.i: main.c
-	$(CPP) main.c > main.i
+%.i: %.c
+	$(CPP) $< > $@
 
 hello.txt:
 	echo "hello world!" > hello.txt
