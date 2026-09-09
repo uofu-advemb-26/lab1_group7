@@ -1,8 +1,8 @@
 PICO_TOOLCHAIN_PATH?=~/.pico-sdk/toolchain/13_2_Rel1
-CPP=/usr/bin/arm-none-eabi-cpp # Using global install instead of version from pico_sdk
-CC=/usr/bin/arm-none-eabi-gcc
-AS=/usr/bin/arm-none-eabi-as
-LD=/usr/bin/arm-none-eabi-ld
+CPP=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-cpp
+CC=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-gcc
+AS=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-as
+LD=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-ld
 SRC=main.c test.c
 OBJS=$(patsubst %.c,%.o,$(SRC))
 
