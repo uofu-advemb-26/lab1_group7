@@ -1,1 +1,3 @@
-void empty_function(){}
+void empty_function() {
+    return;
+}
