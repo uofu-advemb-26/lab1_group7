@@ -7,7 +7,7 @@ SRC=main.c test.c
 OBJS=$(patsubst %.c,%.o,$(SRC))
 
 .PHONY: all
-all: firmware.elf
+all: firmware.elf hello.txt
 
 firmware.elf: $(OBJS)
 	$(LD) -e main -o $@ $^
@@ -20,6 +20,9 @@ main.s: main.i
 
 main.i: main.c
 	$(CPP) main.c > main.i
+
+hello.txt:
+	echo "hello world!" > hello.txt
 
 .PHONY: clean
 clean:
